@@ -74,7 +74,7 @@ variable "mssql_version" {
 # }
 
 variable "collation" {
-  default = "en-GB"
+  default = "SQL_Latin1_General_CP1_CI_AS"
 }
 
 variable "database_name" {}
