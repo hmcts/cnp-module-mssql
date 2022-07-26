@@ -14,7 +14,7 @@ variable "name" {
 variable "env" {}
 
 variable "mssql_listen_port" {
-  default = "5432"
+  default = "1433"
 }
 
 variable "mssql_user" {}
