@@ -29,7 +29,7 @@ resource "random_password" "password" {
   special = true
   upper   = true
   lower   = true
-  number  = true
+  //number  = true //Argument is deprecated
 }
 
 resource "azurerm_mssql_server" "mssql-paas" {
@@ -57,8 +57,8 @@ resource "azurerm_mssql_server" "mssql-paas" {
   azuread_administrator {
   login_username      = local.admin_group
   tenant_id           = data.azurerm_client_config.current.tenant_id
-  object_id           = data.azuread_group.db_admin.object_id
-  }
+  object_id           = data.azurerm_client_config.current.tenant_id//data.azuread_group.db_admin.object_id
+  }  
 }
 
 resource "azurerm_mssql_database" "mssql-db" {
@@ -83,8 +83,8 @@ locals {
 
 data "azurerm_client_config" "current" {}
 
-data "azuread_group" "db_admin" {
+/* data "azuread_group" "db_admin" {
   display_name     = local.admin_group
   security_enabled = true
-}
+} */
 

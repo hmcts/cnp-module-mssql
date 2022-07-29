@@ -9,11 +9,12 @@ output "mssql_listen_port" {
 }
 
 output "mssql_database" {
-  value = azurerm_mssql_database.mssql-db
+  value = azurerm_mssql_database.mssql-db.name
 }
 
 output "mssql_password" {
   value = random_password.password.result
+  sensitive = true
 }
 
 output "user_name" {

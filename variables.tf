@@ -14,7 +14,7 @@ variable "name" {
 variable "env" {}
 
 variable "mssql_listen_port" {
-  default = "5432"
+  default = "1433"
 }
 
 variable "mssql_user" {}
@@ -74,7 +74,7 @@ variable "mssql_version" {
 # }
 
 variable "collation" {
-  default = "en-GB"
+  default = "SQL_Latin1_General_CP1_CI_AS"
 }
 
 variable "database_name" {}
